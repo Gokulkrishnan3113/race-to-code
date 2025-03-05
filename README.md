@@ -102,7 +102,13 @@ deactivate
 ```
 
 ---
-## 9. Additional Notes
+
+## 9. Execution
+Refer the execute.md file to exectute your code
+
+---
+
+## 10. Additional Notes
 - Always activate the virtual environment before running scripts.
 - If you encounter issues with `pip`, upgrade it using the steps above.
 - If `rajinipp` installation fails, check if you are using a compatible Python version (`>=3.8, <3.11`).
@@ -201,7 +207,13 @@ pip show rajinipp
 ```
 
 ---
-## 8. Additional Notes
+
+## 8. Execution
+Refer the execute.md file to exectute your code
+
+---
+
+## 9. Additional Notes
 - Always activate the virtual environment before running scripts.
 - If `rajinipp` installation fails, check if you are using a compatible Python version (`>=3.8, <3.11`).
 - To exit the virtual environment, simply run:
