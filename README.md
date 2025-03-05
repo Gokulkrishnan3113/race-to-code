@@ -118,4 +118,10 @@ deactivate
   pip install --upgrade pip
   ```
 - If `rajinipp` installation fails, check if you are using a compatible Python version (`>=3.8, <3.11`).
+- **Edge Case: Pip Failure Fix**
+  If `pip` installation fails, try the following commands:
+  ```sh
+  curl -sS https://bootstrap.pypa.io/get-pip.py | python
+  pip install --upgrade pip setuptools wheel --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org
+  ```
 
