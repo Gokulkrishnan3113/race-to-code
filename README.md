@@ -27,13 +27,12 @@ To manage different Python versions, install `pyenv`.
 
 1. Open PowerShell as Administrator and run:
 ```sh
-iwr -useb https://pyenv.run | iex
+git clone https://github.com/pyenv-win/pyenv-win.git "$HOME\.pyenv"
 ```
 
 2. Add `pyenv` to the system environment variables by running:
 ```sh
-setx PYENV_ROOT "%USERPROFILE%\.pyenv"
-setx PATH "%PYENV_ROOT%\bin;%PYENV_ROOT%\shims;%PATH%"
+[System.Environment]::SetEnvironmentVariable("Path", $env:Path + ";$HOME\.pyenv\pyenv-win\bin;$HOME\.pyenv\pyenv-win\shims", [System.EnvironmentVariableTarget]::User)
 ```
 
 3. Restart the terminal and verify the installation:
@@ -44,8 +43,8 @@ pyenv --version
 ---
 ## 4. Install Python 3.10.12 Using `pyenv`
 ```sh
-pyenv install 3.10.12
-pyenv local 3.10.12
+pyenv install 3.10.11
+pyenv local 3.10.11
 ```
 
 Verify the installation:
@@ -71,18 +70,10 @@ venv\Scripts\Activate.ps1
 After activation, your terminal will show `(venv)` at the beginning of the line.
 
 ---
-## 6. Upgrade `pip`
-If `pip` fails or is outdated, run:
-```sh
-curl -sS https://bootstrap.pypa.io/get-pip.py | python
-pip install --upgrade pip setuptools wheel --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org
-```
-
----
-## 7. Install `rajinipp`
+## 6. Install `rajinipp`
 With the virtual environment activated, install `rajinipp`:
 ```sh
-pip install rajinipp
+pip install rajinipp pyyaml
 ```
 
 Verify the installation:
@@ -91,6 +82,19 @@ pip show rajinipp
 ```
 
 ---
+## 7. Upgrade `pip`
+Only If `pip` fails or is outdated, run:
+```sh
+curl -sS https://bootstrap.pypa.io/get-pip.py | python
+pip install --upgrade pip setuptools wheel --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org
+```
+then try installing again
+```sh
+pip install rajinipp pyyaml
+```
+
+---
+
 ## 8. Deactivating the Virtual Environment (Optional)
 If you want to exit the virtual environment, simply run:
 ```sh
